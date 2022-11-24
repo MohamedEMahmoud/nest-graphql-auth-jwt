@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthResponseType {
+  access_token: String
+  user: User!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  login(loginInput: LoginInput!): AuthResponseType!
+  removeUser(id: Int!): User!
+  signup(registerInput: RegisterInput!): AuthResponseType!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  currentUser: User!
+  user(id: Int!): User!
+}
+
+input RegisterInput {
+  avatar: String!
+  email: String!
+  password: String!
+  username: String!
+}
+
+input UpdateUserInput {
+  avatar: String!
+  email: String!
+  id: Float!
+  password: String!
+  username: String!
+}
+
+type User {
+  avatar: String!
+  email: String!
+  id: Int!
+  token: String
+  username: String!
+}
